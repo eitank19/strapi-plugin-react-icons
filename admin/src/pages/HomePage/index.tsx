@@ -26,7 +26,7 @@ import {
   VisuallyHidden,
 } from '@strapi/design-system';
 import { Trash } from '@strapi/icons';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import * as ReactIcons from '../../all';
 import usePermissions from '../../hooks/usePermissions';
 
@@ -85,7 +85,7 @@ const HomePage = () => {
 
   if (loading) return null;
 
-  if (!canRead) return <Redirect to="/" />;
+  if (!canRead) return <Navigate to="/" />;
 
   return (
     <Layout
